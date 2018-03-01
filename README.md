@@ -1,2 +1,2 @@
 # SHIPs
-SmartHoldem Improvement Proposals
+SmartHoldem Improvement Proposals. SHIPs propose and describe changes made to SmartHoldem Protocol.
