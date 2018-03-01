@@ -1,0 +1,2 @@
+# SHIPs
+SmartHoldem Improvement Proposals
