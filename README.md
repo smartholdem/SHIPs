@@ -5,4 +5,4 @@ Having a SHIP here does not make it a formally accepted standard until its statu
 
 | Number        | Title        | Author | Type  | Layer        | Status              |
 | ------------- | ------------ | ------ | ----- | ------------ | ------------------- |
-| 1 | URI Scheme | e.Paul | Standard  | Applications | [Draft](/SHIPs/ship-001.md) |
+| 1 | URI Scheme | e.Paul | Standard  | Applications | [Draft](https://github.com/smartholdem/SHIPs/SHIPS/ship-001.md) |
