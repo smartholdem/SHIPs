@@ -1,11 +1,11 @@
 <pre>
-  SHIP: *1*
-  Title: *URI Scheme*
-  Authors: *Paul Garcia <paul@elba.io>*
-  Status: *Draft*
-  Type: *Standards Track*
-  Created: *2018-03-29*
-  Last Update: *2018-03-29*
+  SHIP: 1
+  Title: URI Scheme
+  Authors: Paul Garcia <paul@elba.io>
+  Status: Draft
+  Type: Standards Track
+  Created: 2018-03-29
+  Last Update: 2018-03-29
 </pre>
 
 Abstract
