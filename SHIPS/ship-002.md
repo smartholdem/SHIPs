@@ -16,7 +16,8 @@ Reduce the number of delegates in the first network (Z-Network) to 27.
 Motivation
 ==========
 
-- In order to achieve the most efficient transactional spread between forgers.
+- Achieve the most efficient transactional spread between forgers.
+- Improving blockchain productivity for business, games and payments.
 - Delegate Rewards Improvement.
 
 Specifications
