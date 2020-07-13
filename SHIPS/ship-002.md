@@ -2,10 +2,10 @@
   SHIP: 002
   Title: Reduce the number of delegates in Z-Network
   Authors: TechnoL0g
-  Status: *Active*
-  Type: *Standards Track*
-  Created: *2020-07-12*
-  Last Update: *2020-07-13*
+  Status: Active
+  Type: Core/Protocol
+  Created: 2020-07-12
+  Last Update: 2020-07-13
 </pre>
 
 Abstract
