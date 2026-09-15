@@ -1,6 +1,6 @@
 <pre>
   SHIP: 003
-  Title: Raise block reward in Z-Network
+  Title: Raise block reward in SmartHoldem Network
   Authors: TechnoL0g
   Status: Active
   Type: Core/Protocol

@@ -11,7 +11,7 @@
 Abstract
 ========
 
-Reduce the number of delegates in the first network (Z-Network) to 27.
+Reduce the number of delegates in the mainnet network to 21.
 
 Motivation
 ==========
@@ -23,7 +23,7 @@ Motivation
 Specifications
 ==============
 
-Create a soft fork on block-N, after which the number of delegates of the signing blocks will be reduced to 27.
+Create a soft fork on block-N, after which the number of delegates of the signing blocks will be reduced to 21.
 
 1 block is created every 8 seconds, 10 800 blocks per day (86400 / 8 = 10800).
-With 27 forgers, each creates 400 blocks per day (10800 / 27 = 400).
+With 21 forgers, each creates 514 blocks per day (10800 / 21 = 514).
