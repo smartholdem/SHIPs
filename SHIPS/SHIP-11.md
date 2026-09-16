@@ -14,7 +14,7 @@
 
 This SHIP documents, as a frozen standard, the byte layout of version-2 transactions and the signature schemes in force on
 mainnet: Schnorr (BIP-340-style, 64 bytes) for transaction senders and second signatures, and Schnorr block signatures.
-Historically these rules were activated by the milestone flags `v2 format` and `Schnorr blocks`; the keys
+Historically these rules were activated by the milestone flags `SHIP-11` (v2 format) and `SHIP-11` (Schnorr blocks); the keys
 stay in `milestones.json` for wallet-library compatibility, the specification lives here. Version 3 (SHIP-19) extends this
 layout without changing any byte of the common header.
 
