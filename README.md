@@ -1,5 +1,5 @@
 # SHIPs - SmartHoldem Improvement Proposals
-
+![ship.jpg](ship.jpg)
 SHIPs describe standards for the SmartHoldem network: consensus rules, transaction types, wire formats, node behaviour,
 peer-to-peer transport, tooling and processes. A SHIP is a design document providing information to the community and
 describing a new feature, its rationale and a reference implementation in `sth-core` (Rust).
