@@ -40,7 +40,7 @@ Standards Track SHIPs carry a **Category**: `Core`, `Networking`, `Interface`, `
 
 Consensus-affecting SHIPs activate through a **milestone** in `milestones.json` (height-gated flag). A milestone may only be
 scheduled when every active delegate (all 21) and the reserve run a core version enforcing the new rules; readiness is
-verified on the Delegate Dashboard (SHIP-8) and the rollout follows the checklist in `docs/MAINNET-ROLLOUT-PQ_RU.md`.
+verified on the Delegate Dashboard (SHIP-8).
 
 ## Format
 
