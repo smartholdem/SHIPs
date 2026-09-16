@@ -70,7 +70,7 @@ anything" risks; code changes still follow SHIP-1.
 
 ## Backwards Compatibility
 
-New typeGroup; Rust-only network. The whitelist can only grow through a new SHIP.
+New typeGroup; [Rust-only network](https://github.com/smartholdem/sth-core-rust). The whitelist can only grow through a new SHIP.
 
 ## Reference Implementation
 

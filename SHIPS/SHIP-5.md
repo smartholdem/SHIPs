@@ -28,19 +28,19 @@ exchanges and old wallets working while they migrate.
 - **Inbound**: the node serves the legacy WebSocket protocol (`p2p.legacy_port`, default 4001): `getStatus`,
   `getBlocks`, `postBlock`, `postTransactions`, `getPeers`, with the same JSON shapes and rate limits the legacy node applies.
 - **Outbound**: a `PeerTable` of legacy peers with health scores (latency, height, error streak) refreshed continuously;
-  peers are learned from `getPeers` of any healthy peer, from `Peers` gossip of Rust nodes and from `sync.rest_nodes`.
+  peers are learned from `getPeers` of any healthy peer, from `Peers` gossip of [Rust nodes](https://github.com/smartholdem/sth-core-rust) and from `sync.rest_nodes`.
 - **Bridge**: a block arriving over iroh is forwarded to legacy peers with `postBlock` (fan-out `relay_fanout`) and vice
   versa; transactions likewise. Duplicates are suppressed by id on both sides.
-- **Gateway announce**: a Rust node reachable on its legacy port publishes `Peers { gateway: "ip:4001" }` over gossip so that
+- **Gateway announce**: a [Rust node](https://github.com/smartholdem/sth-core-rust) reachable on its legacy port publishes `Peers { gateway: "ip:4001" }` over gossip so that
   newcomers on either stack find a bridge quickly; the metrics page ([SHIP-8.md](SHIP-8.md)) uses gateway addresses to tell which
-  legacy-visible peers are actually Rust nodes.
+  legacy-visible peers are actually [Rust nodes](https://github.com/smartholdem/sth-core-rust).
 - **Legacy evidence**: for every delegate the node records through which stack its recent blocks arrived; a delegate whose
   blocks are only ever seen from non-gateway legacy peers is inferred to run legacy software (`implementation: legacy`).
 
 ## Rationale
 
 Bridging at the message level (rather than proxying connections) keeps each stack's validation and rate limits intact and
-lets the iroh side become the primary path as soon as enough Rust nodes exist, with no flag day.
+lets the iroh side become the primary path as soon as enough [Rust nodes](https://github.com/smartholdem/sth-core-rust) exist, with no flag day.
 
 ## Backwards Compatibility
 

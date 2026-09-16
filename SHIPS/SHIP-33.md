@@ -73,7 +73,7 @@ be fully understood by reading its parameters. This matches the network's DNA (n
 
 ## Backwards Compatibility
 
-New typeGroup; Rust-core-only network.
+New typeGroup; [Rust-only network](https://github.com/smartholdem/sth-core-rust).
 
 ## Reference Implementation
 

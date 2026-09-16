@@ -49,7 +49,7 @@ Topic ids are derived from the network `nethash`, so test networks never mix wit
 
 Gossip uses HyParView-style membership and Plumtree broadcast (iroh-gossip): each node keeps a small active view,
 messages reach `N` nodes in `O(log N)` hops with duplicate suppression by message id. Measured mainnet propagation of a
-block to all Rust nodes: 60–150 ms versus 1–3 s over legacy WebSockets.
+block to all [Rust nodes](https://github.com/smartholdem/sth-core-rust): 60–150ms versus 1–3 s over legacy WebSockets.
 
 ### RPC
 
@@ -64,7 +64,7 @@ Sync prefers iroh peers: the follower asks the best-height peer for ranges of up
 ### Bootstrap without central servers
 
 Order of discovery: `node.yaml -> p2p.bootstrap` node ids -> peers remembered in the database from previous runs ->
-`Peers` gossip -> legacy gateways announced by Rust nodes (SHIP-5). A node that has ever been online can restart with
+`Peers` gossip -> legacy gateways announced by [Rust nodes](https://github.com/smartholdem/sth-core-rust) ([SHIP-5.md](SHIP-5.md)). A node that has ever been online can restart with
 an empty bootstrap list.
 
 ### Delegate quorum
@@ -85,7 +85,7 @@ server is a single point of failure; test networks are isolated by construction.
 
 ## Backwards Compatibility
 
-Additive. Rust nodes speak both stacks ([SHIP-5.md](SHIP-5.md)); legacy nodes see Rust nodes as ordinary WebSocket peers.
+Additive. [Rust nodes](https://github.com/smartholdem/sth-core-rust) speak both stacks ([SHIP-5.md](SHIP-5.md)); legacy nodes see Rust nodes as ordinary WebSocket peers.
 
 ## Reference Implementation
 

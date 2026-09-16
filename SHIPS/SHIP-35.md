@@ -19,7 +19,7 @@ block, and pruning ([SHIP-31.md](SHIP-31.md)) and light clients ([SHIP-38.md](SH
 
 ## Motivation
 
-Today a block is "probably final" once 21 delegates have built on it - a full round (168 s). Rust nodes already roll back
+Today a block is "probably final" once 21 delegates have built on it - a full round (168 s). [Rust nodes](https://github.com/smartholdem/sth-core-rust) already roll back
 forks automatically ([SHIP-2.md](SHIP-2.md)), which protects consistency but not user experience or exchange deposit times. The network has
 authenticated, sub-100 ms fan-out ([SHIP-4.md](SHIP-4.md)) and a signed delegate identity ([SHIP-8.md](SHIP-8.md)): the ingredients of a BFT vote.
 

@@ -13,15 +13,15 @@
 ## Abstract
 
 Raise the multipayment recipient limit (`multiPaymentLimit`, milestone) from 256 to **1 024** once the network runs on
-Rust nodes only, and define the accompanying block payload and fee rules so that one transaction can settle a payroll,
+[Rust nodes](https://github.com/smartholdem/sth-core-rust) only, and define the accompanying block payload and fee rules so that one transaction can settle a payroll,
 an airdrop or an exchange batch in a single 8-second slot.
 
 ## Motivation
 
 A multipayment costs one signature check (~0.24 ms) regardless of recipient count; the per-recipient cost is state
 application (~0.09 ms per operation, [SHIP-7.md](SHIP-7.md) measurements). With 256 recipients the signature is already < 1 % of the cost,
-so the limit is a policy choice, not a performance one. Legacy nodes cannot validate larger payments; Rust nodes can apply
-1 024 recipients in ~90 ms.
+so the limit is a policy choice, not a performance one. Legacy nodes cannot validate larger payments; [Rust nodes](https://github.com/smartholdem/sth-core-rust) can apply
+1024 recipients in ~90 ms.
 
 ## Specification
 

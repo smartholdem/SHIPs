@@ -60,7 +60,7 @@ checkpointed batches keeps import CPU-bound instead of I/O-bound.
 
 ## Benefits
 
-Full mainnet node in minutes; no trust in the snapshot provider; the same archives serve legacy and Rust nodes.
+Full mainnet node in minutes; no trust in the snapshot provider; the same archives serve legacy and [Rust nodes](https://github.com/smartholdem/sth-core-rust).
 
 ## Reference Implementation
 

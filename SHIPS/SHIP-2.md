@@ -12,7 +12,7 @@
 
 ## Abstract
 
-This SHIP specifies `sth-core`, a full reimplementation of the SmartHoldem node in Rust that is byte-for-byte compatible with
+This SHIP specifies `sth-core`, a full reimplementation of the SmartHoldem [node in Rust](https://github.com/smartholdem/sth-core-rust) that is byte-for-byte compatible with
 the historical chain (block and transaction hashing, signatures, state transitions) and with the legacy REST API, while
 replacing the storage engine, the networking stack and the execution pipeline. It is the platform on which every later SHIP
 is built.
