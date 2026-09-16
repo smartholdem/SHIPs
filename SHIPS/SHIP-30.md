@@ -41,7 +41,7 @@ id (dictionaries trained on the previous epoch, stored once in `dict:<id>`). Fit
 ### Search
 
 Run by any node (or a maintainer script) with a population of 64 genomes, tournament selection, crossover on the gene list,
-mutation rate 3 %, 200 generations, time-boxed. The best genome is **not consensus**: each node may re-encode its own
+mutation rate 3%, 200 generations, time-boxed. The best genome is **not consensus**: each node may re-encode its own
 history with any genome; the result must round-trip to identical bytes (verified by re-hashing every block on encode).
 Maintainers publish good genomes with snapshots ([SHIP-6.md](SHIP-6.md)) so most nodes never run the search.
 
