@@ -26,11 +26,11 @@ Milestones that legacy nodes cannot validate may only be activated when all acti
 
 ### Delegate Dashboard
 
-For each of the top‑21 delegates (by the vote index, SHIP-7):
+For each of the top‑21 delegates (by the vote index, [SHIP-7.md](SHIP-7.md)):
 
 | field | source |
 |---|---|
-| `implementation` | `rust` - proven by a signed `Delegates` gossip announce (SHIP-4); `legacy` - inferred from legacy-only block evidence (SHIP-5); else `unknown` |
+| `implementation` | `rust` - proven by a signed `Delegates` gossip announce ([SHIP-4.md](SHIP-4.md)); `legacy` - inferred from legacy-only block evidence ([SHIP-5.md](SHIP-5.md)); else `unknown` |
 | `version` | core version from the announce |
 | `outdated` | `version < milestone.minCoreVersion` of the current height |
 | `node`, `lastSeen` | iroh node id (short) and seconds since the announce |

@@ -20,14 +20,14 @@ index instead of being recomputed from every wallet at round boundaries.
 
 Signature verification (~0.24 ms per Schnorr signature) dominates block validation; with 150 transactions per block and
 8-second slots the legacy sequential path uses a third of the slot on one core. Delegate ranking in the legacy node scans
-all wallets every round (thousands of rows). Both limit block size and slot time (SHIP-12, SHIP-39).
+all wallets every round (thousands of rows). Both limit block size and slot time ([SHIP-12.md](SHIP-12.md), [SHIP-39.md](SHIP-39.md)).
 
 ## Specification
 
 ### Parallel verification
 
 - Stateless checks of a block (`verify_block`) - transaction format, fees, payload hash membership, sender signature,
-  legacy second signature and (SHIP-19) v3 blocks - run over the transaction list with a work-stealing pool (rayon).
+  legacy second signature and ([SHIP-19.md](SHIP-19.md)) v3 blocks - run over the transaction list with a work-stealing pool (rayon).
 - Verification is pure: it reads no state and has no ordering requirement, so results are identical to sequential
   verification; errors are collected and reported deterministically (sorted by transaction index).
 - Measured: 150 transactions verify in ~9 ms on 4 cores; 5 000 in ~0.3 s.
@@ -36,7 +36,7 @@ all wallets every round (thousands of rows). Both limit block size and slot time
 
 - `dv:<delegate public key> -> u64` holds the current vote weight of each delegate.
 - Every balance change of a voting wallet, every vote/unvote and every HTLC settlement adjusts the index by the exact
-  delta inside the same atomic block write (SHIP-3); rollback restores it from the wallet snapshots.
+  delta inside the same atomic block write ([SHIP-3.md](SHIP-3.md)); rollback restores it from the wallet snapshots.
 - Round computation reads the top‑N of the index (N = `activeDelegates` = 21) - O(delegates) instead of O(wallets).
 - The vote weight of a wallet is its balance (plus locked HTLC balance as in the legacy rules); the index is verified
   against a full recomputation in tests after long random sequences.

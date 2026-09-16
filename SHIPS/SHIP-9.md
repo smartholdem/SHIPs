@@ -37,7 +37,7 @@ sth-core init newnet --out DIR --delegates N [--seed S] [--ticker TST] [--title 
   8-second slots, `activeDelegates = N`), plus optional `{ height: H, tokens: true }` and
   `{ height: H, pq: { active: true, feePerByte: 10000, commitmentGrace: 86400 } }`; `sobjV2: true` and `strictBalance: true`
   from the start.
-- **Isolation**: distinct `nethash`, address prefix (`pubKeyHash`), gossip topic ids (derived from nethash, SHIP-4) and
+- **Isolation**: distinct `nethash`, address prefix (`pubKeyHash`), gossip topic ids (derived from nethash, [SHIP-4.md](SHIP-4.md)) and
   legacy protocol version; a test node cannot connect to or accept mainnet blocks.
 - **Second node**: copy the directory, change ports, point `p2p.bootstrap` at the first node's iroh id - no seed servers.
 - Output: `delegates.json` (usernames, passphrases, addresses), `node.yaml` with `network_dir: .`, and a summary

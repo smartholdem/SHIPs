@@ -40,7 +40,7 @@ sth-cli [--api URL] [--json] <command>
   client never hard-codes consensus constants.
 - Second signatures: `--second-passphrase` (or `STH_SECOND_PASSPHRASE`) produces a legacy v2 second signature for
   wallets with `secondPublicKey`, and automatically a **v3** transaction with an ML-DSA-44 block plus the fee surcharge
-  for PQ-locked wallets (SHIP-19/20).
+  for PQ-locked wallets ([SHIP-19.md](SHIP-19.md), [SHIP-20.md](SHIP-20.md)).
 - Nonce handling: wallet nonce + 1 with one automatic retry on `ERR_NONCE`; `--json` prints machine-readable output.
 - `watch` polls the wallet's transactions and prints human descriptions ("sObject registered", "sale order", "token
   received", "Quantum Shield registered").

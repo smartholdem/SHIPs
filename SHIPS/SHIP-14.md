@@ -13,7 +13,7 @@
 ## Abstract
 
 Fungible tokens implemented **natively in consensus** - no virtual machine, no per-token code: a token is a sObject of type 5
-(its ticker, SHIP-13) plus a fixed set of transactions in `typeGroup 3` (init, transfer, mint, burn, meta). Balances live in
+(its ticker, [SHIP-13.md](SHIP-13.md)) plus a fixed set of transactions in `typeGroup 3` (init, transfer, mint, burn, meta). Balances live in
 wallet state, transfers cost microseconds, and every token has the same audited rules.
 
 ## Motivation
@@ -27,7 +27,7 @@ fast, deterministic state transitions for STH; giving tokens the same engine yie
 ### Registry
 
 `tokenId = registrationId` of the type-5 sObject; the token owner **is** the sObject owner (moves with transfer / buy,
-SHIP-16). A resigned registry cannot init a token; a registry with live supply cannot resign (resign guard).
+[SHIP-16.md](SHIP-16.md)). A resigned registry cannot init a token; a registry with live supply cannot resign (resign guard).
 
 ### Transactions (`typeGroup 3`, `amount = 0`, version 2 or 3)
 
@@ -42,12 +42,12 @@ SHIP-16). A resigned registry cannot init a token; a registry with live supply c
 `flags`: bit0 `mintable`, bit1 `burnable`, bit2 `frozenCap` (reserved, always set), bits 3–7 reserved (SHIP-24/25/28 will
 assign them). `decimals` 0–18; amounts are `u64` strings in minimal units; `memo` ≤ 64 bytes UTF-8;
 `count` ≤ `tokenTransferMaxRecipients` (64). Fees are **exact** (`StaticFeeMismatchError`), plus the v3 surcharge when the
-sender is PQ-locked (SHIP-19).
+sender is PQ-locked ([SHIP-19.md](SHIP-19.md)).
 
 ### State
 
 `tk:<tokenId> → { symbol, decimals, flags, supply, supplyCap, owner, initHeight, meta }`; `tks:<SYMBOL> → tokenId`;
-`wallet.attributes.tokens[tokenId] = balance`. All updates are atomic per block with undo (SHIP-3).
+`wallet.attributes.tokens[tokenId] = balance`. All updates are atomic per block with undo ([SHIP-3.md](SHIP-3.md)).
 
 ### Rules
 
@@ -62,11 +62,11 @@ Sender balance ≥ sum of outputs; recipients distinct from nothing (self-transf
 ### Activation
 
 Milestone `{ "height": H_TOKENS, "tokens": true, "sobjV2": true, "strictBalance": true }` - scheduled when all 21 active
-delegates run `sth-core` (SHIP-1). Full specification: `docs/SPEC-TOKENS-NATIVE.md`.
+delegates run `sth-core` ([SHIP-1.md](SHIP-1.md)). Full specification: `docs/SPEC-TOKENS-NATIVE.md`.
 
 ## Rationale
 
-Tying ownership to the sObject reuses naming, uniqueness and (SHIP-16) the market for free; fixed fees paid in STH keep the
+Tying ownership to the sObject reuses naming, uniqueness and ([SHIP-16.md](SHIP-16.md)) the market for free; fixed fees paid in STH keep the
 fee market simple and make token activity a demand driver for STH.
 
 ## Backwards Compatibility

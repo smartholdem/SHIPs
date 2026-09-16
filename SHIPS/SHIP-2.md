@@ -28,7 +28,7 @@ performance lets the network evolve (post-quantum signatures, native tokens, sub
 
 ### Compatibility invariants
 
-1. Block id, transaction id and signing hashes are computed exactly as the legacy core does (SHIP-11); the whole mainnet
+1. Block id, transaction id and signing hashes are computed exactly as the legacy core does ([SHIP-11.md](SHIP-11.md)); the whole mainnet
    history validates from block 1 with identical state (balances, votes, delegate ranks, second keys, locks).
 2. The REST API (`/api/*`) keeps the legacy response shapes; new fields are additive.
 3. Consensus parameters come from `network.json` / `milestones.json` / `exceptions.json`, deep-merged by height;
@@ -40,12 +40,12 @@ performance lets the network evolve (post-quantum signatures, native tokens, sub
 |---|---|
 | `sync` / `follow` | chain following, batch validation of blocks, fork detection and automatic rollback |
 | `rules` | stateless and wallet-aware transaction rules (fees, nonces, balances, second signatures, sObjects, tokens, PQ) |
-| `storage` | Sled key-value state with undo log (SHIP-3) |
-| `p2p_iroh` / `p2p_legacy` | Web4 transport (SHIP-4) and legacy WebSocket bridge (SHIP-5) |
+| `storage` | Sled key-value state with undo log ([SHIP-3.md](SHIP-3.md)) |
+| `p2p_iroh` / `p2p_legacy` | Web4 transport ([SHIP-4.md](SHIP-4.md)) and legacy WebSocket bridge ([SHIP-5.md](SHIP-5.md)) |
 | `delegate` | round computation, slot scheduling, block forging with pluggable delegate keys |
 | `mempool` | validation, sender ordering, relay, count and byte budgets |
-| `api` | Axum REST server, operator metrics page (SHIP-8) |
-| `crypto` | Schnorr / ECDSA, BIP-39, ML-DSA-44 (SHIP-18/20), serializers (SHIP-11/19) |
+| `api` | Axum REST server, operator metrics page ([SHIP-8.md](SHIP-8.md)) |
+| `crypto` | Schnorr / ECDSA, BIP-39, ML-DSA-44 ([SHIP-18.md](SHIP-18.md)/[SHIP-20.md](SHIP-20.md)), serializers ([SHIP-11.md](SHIP-11.md)/[SHIP-19.md](SHIP-19.md)) |
 
 ### Operational profile
 

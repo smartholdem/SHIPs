@@ -28,7 +28,7 @@ or a delegate node in minutes while keeping the guarantee that no invalid histor
 `<start>-<end>.tgz` containing `meta.json` and gzip streams of msgpack records:
 - `blocks` - `[id, version, timestamp, previousBlock, height, numberOfTransactions, totalAmount, totalFee, reward,
   payloadLength, payloadHash, generatorPublicKey, blockSignature]`;
-- `transactions` - `[id, blockId, blockHeight, sequence, timestamp, serialized]` where `serialized` is the SHIP-11 wire
+- `transactions` - `[id, blockId, blockHeight, sequence, timestamp, serialized]` where `serialized` is the [SHIP-11.md](SHIP-11.md) wire
   bytes (so transactions are re-parsed by the node's own deserializer, never trusted as JSON);
 - `rounds` - delegate ranking per round (ignored by relays; recomputed from votes).
 
@@ -44,7 +44,7 @@ sth-core snapshot import <archive> [--fast-import]  # into the node database
 
 With `--fast-import` blocks are written without undo records and signature verification is deferred: after every
 checkpoint (10 000 blocks) the node verifies `payloadHash`, block signatures and transaction signatures of the checkpointed
-range in parallel (SHIP-7) and aborts on the first mismatch. State transitions are always applied through the normal rules;
+range in parallel ([SHIP-7.md](SHIP-7.md)) and aborts on the first mismatch. State transitions are always applied through the normal rules;
 only the undo log is skipped. Undo is re-enabled when the import ends, before the node starts following peers.
 
 ### Safety

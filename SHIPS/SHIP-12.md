@@ -19,7 +19,7 @@ an airdrop or an exchange batch in a single 8-second slot.
 ## Motivation
 
 A multipayment costs one signature check (~0.24 ms) regardless of recipient count; the per-recipient cost is state
-application (~0.09 ms per operation, SHIP-7 measurements). With 256 recipients the signature is already < 1 % of the cost,
+application (~0.09 ms per operation, [SHIP-7.md](SHIP-7.md) measurements). With 256 recipients the signature is already < 1 % of the cost,
 so the limit is a policy choice, not a performance one. Legacy nodes cannot validate larger payments; Rust nodes can apply
 1 024 recipients in ~90 ms.
 
@@ -44,7 +44,7 @@ so the limit is a policy choice, not a performance one. Legacy nodes cannot vali
 ## Rationale
 
 1 024 keeps a full transaction under 30 KB (fits one gossip message) and one block's apply time under 25 % of an 8-second
-slot on the reference hardware. Larger limits (2 048+) wait for parallel state application (SHIP-36).
+slot on the reference hardware. Larger limits (2 048+) wait for parallel state application ([SHIP-36.md](SHIP-36.md)).
 
 ## Backwards Compatibility
 

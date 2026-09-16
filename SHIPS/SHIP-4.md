@@ -22,7 +22,7 @@ and relays never see plaintext nor are required once a direct path exists.
 
 Legacy nodes talk over WebSockets to IP:port pairs published in a seed list. This needs public IPs (or port forwarding),
 leaks topology, propagates a block through the network in one to three seconds and depends on a handful of seed hosts.
-For sub-second slots (SHIP-39) and BFT finality (SHIP-35) the network needs sub-100 ms fan-out, authenticated peers and
+For sub-second slots ([SHIP-39.md](SHIP-39.md)) and BFT finality ([SHIP-35.md](SHIP-35.md)) the network needs sub-100 ms fan-out, authenticated peers and
 connectivity from home and mobile networks.
 
 ## Specification
@@ -75,17 +75,17 @@ agree on the tip height and id, preventing forging on a private fork after a net
 ## Rationale
 
 Iroh was chosen over libp2p for a smaller footprint, first-class NAT traversal and relay design, and a QUIC stack shared
-with the future light-client protocol (SHIP-38). Gossip messages carry full blocks today; compact blocks (SHIP-36) will cut
+with the future light-client protocol ([SHIP-38.md](SHIP-38.md)). Gossip messages carry full blocks today; compact blocks ([SHIP-36.md](SHIP-36.md)) will cut
 bandwidth once mempools are well synchronised.
 
 ## Benefits
 
-Home and mobile nodes participate without port forwarding; block fan-out 10–20× faster; authenticated peers; no seed
+Home and mobile nodes participate without port forwarding; block fan-out 10–20x faster; authenticated peers; no seed
 server is a single point of failure; test networks are isolated by construction.
 
 ## Backwards Compatibility
 
-Additive. Rust nodes speak both stacks (SHIP-5); legacy nodes see Rust nodes as ordinary WebSocket peers.
+Additive. Rust nodes speak both stacks ([SHIP-5.md](SHIP-5.md)); legacy nodes see Rust nodes as ordinary WebSocket peers.
 
 ## Reference Implementation
 

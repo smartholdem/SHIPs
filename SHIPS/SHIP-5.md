@@ -19,7 +19,7 @@ nodes announce themselves as **gateways** for legacy traffic.
 
 ## Motivation
 
-Consensus features can only be scheduled when every active delegate runs `sth-core` (SHIP-1). Until then the Rust node
+Consensus features can only be scheduled when every active delegate runs `sth-core` ([SHIP-1.md](SHIP-1.md)). Until then the Rust node
 must be a first-class citizen of the legacy network and must not partition it; afterwards the bridge keeps explorers,
 exchanges and old wallets working while they migrate.
 
@@ -32,7 +32,7 @@ exchanges and old wallets working while they migrate.
 - **Bridge**: a block arriving over iroh is forwarded to legacy peers with `postBlock` (fan-out `relay_fanout`) and vice
   versa; transactions likewise. Duplicates are suppressed by id on both sides.
 - **Gateway announce**: a Rust node reachable on its legacy port publishes `Peers { gateway: "ip:4001" }` over gossip so that
-  newcomers on either stack find a bridge quickly; the metrics page (SHIP-8) uses gateway addresses to tell which
+  newcomers on either stack find a bridge quickly; the metrics page ([SHIP-8.md](SHIP-8.md)) uses gateway addresses to tell which
   legacy-visible peers are actually Rust nodes.
 - **Legacy evidence**: for every delegate the node records through which stack its recent blocks arrived; a delegate whose
   blocks are only ever seen from non-gateway legacy peers is inferred to run legacy software (`implementation: legacy`).

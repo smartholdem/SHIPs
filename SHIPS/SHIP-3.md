@@ -35,12 +35,12 @@ mainnet history.
 | `t:` | transaction id | transaction + block coordinates |
 | `tl:` / `wt:` | height·seq / address·seq | ordered transaction lists (global, per wallet) |
 | `w:` / `wp:` / `wu:` | address / public key / username | `WalletState` (balance, nonce, votes, second key, `attributes`: sObjects, tokens, `pq_key`) |
-| `dv:` | delegate public key | vote weight (fast vote index, SHIP-7) |
+| `dv:` | delegate public key | vote weight (fast vote index, [SHIP-7.md](SHIP-7.md)) |
 | `lk:` | lock id | HTLC lock |
 | `rd:` | round | delegate order of the round |
-| `en:` / `eo:` / `mk:` | sObject name·type / registration id / registration id | name uniqueness, owner, open sale order (SHIP-13/16) |
-| `tk:` / `tks:` | token id / symbol | token state, symbol index (SHIP-14) |
-| `pqc:` / `pqk:` | address | Quantum Shield commitment / registered key (SHIP-18/20) |
+| `en:` / `eo:` / `mk:` | sObject name·type / registration id / registration id | name uniqueness, owner, open sale order ([SHIP-13.md](SHIP-13.md)/[SHIP-16.md](SHIP-16.md)) |
+| `tk:` / `tks:` | token id / symbol | token state, symbol index ([SHIP-14.md](SHIP-14.md)) |
+| `pqc:` / `pqk:` | address | Quantum Shield commitment / registered key ([SHIP-18.md](SHIP-18.md)/[SHIP-20.md](SHIP-20.md)) |
 | `undo:` | height | previous wallet states touched by the block |
 
 Prefixes are historical identifiers; renaming them would force a resync of every node, so they never change.

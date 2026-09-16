@@ -35,7 +35,7 @@ One object type with a small action set keeps the protocol small and lets applic
   "data": { "name": "COFFEE", "ntfryData": "sth://coffee/manifest.json" } }
 ```
 
-Wire payload after the common header (SHIP-11): `u8 type ‖ u8 subType ‖ u8 action ‖ u8 len ‖ registrationId ‖
+Wire payload after the common header ([SHIP-11.md](SHIP-11.md)): `u8 type ‖ u8 subType ‖ u8 action ‖ u8 len ‖ registrationId ‖
 u8 len ‖ name ‖ u8 len ‖ slot`, where `slot` carries `ntfryData` (actions 0/1), `recipientId` (3) or the decimal `price` (4).
 `amount = 0`, fees are fixed per action.
 
@@ -57,17 +57,17 @@ Types: `4` - delegate object (name must equal the sender's delegate username, ne
 ### State
 
 `wallet.attributes.sobjects[registrationId] = { type, subType, data, resigned, price }` in the wallet of the **current**
-owner; indexes `en:` (name), `eo:` (owner after transfer), `mk:` (open orders) (SHIP-3).
+owner; indexes `en:` (name), `eo:` (owner after transfer), `mk:` (open orders) ([SHIP-3.md](SHIP-3.md)).
 
 ### API and tooling
 
 `GET /api/sobj`, `GET /api/sobj/:id`, `POST /api/sobj/search`; wallets expose `attributes.sobjects`;
-`sth-cli obj`, `sth-cli tx obj-*` (SHIP-10). Full specification: `docs/SPEC-SOBJECT.md`.
+`sth-cli obj`, `sth-cli tx obj-*` ([SHIP-10.md](SHIP-10.md)). Full specification: `docs/SPEC-SOBJECT.md`.
 
 ### Activation
 
 Registration/update/resign rules are active on mainnet since height **11 800 000** (milestone key `SHIP-13`, alias `sobj`).
-Milestone `sobjV2` enables UTF-8 pointers, ticker names and actions 3–5; it is scheduled with SHIP-14.
+Milestone `sobjV2` enables UTF-8 pointers, ticker names and actions 3–5; it is scheduled with [SHIP-14.md](SHIP-14.md).
 
 ## Rationale
 

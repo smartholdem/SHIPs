@@ -12,10 +12,10 @@
 
 ## Abstract
 
-A share of the `TokenInit` fee (SHIP-14) is permanently removed from circulation by crediting it to the network burn
+A share of the `TokenInit` fee ([SHIP-14.md](SHIP-14.md)) is permanently removed from circulation by crediting it to the network burn
 address inside block application. The share is the milestone parameter `tokenFees.initBurnPercent` (0–100, default 50), so
 the network can raise, lower or disable burning without a code release. The mechanism is generic and is the base for the
-deflationary token option (SHIP-28) and for governance decisions (SHIP-23).
+deflationary token option ([SHIP-28.md](SHIP-28.md)) and for governance decisions ([SHIP-23.md](SHIP-23.md)).
 
 ## Motivation
 

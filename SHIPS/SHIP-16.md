@@ -12,7 +12,7 @@
 
 ## Abstract
 
-Three actions extend SmartObjects (SHIP-13) under the `sobjV2` milestone: **transfer** (action 3) hands an object to another
+Three actions extend SmartObjects ([SHIP-13.md](SHIP-13.md)) under the `sobjV2` milestone: **transfer** (action 3) hands an object to another
 address, **sell** (action 4) opens a fixed-price order, **buy** (action 5) settles it atomically - coins to the owner, object
 (and, for type 5, the token registry) to the buyer - in a single transaction without escrow, intermediaries or contracts.
 
@@ -47,7 +47,7 @@ as further actions without changing the wire format.
 
 ## Backwards Compatibility
 
-Actions 3–5 are rejected before `sobjV2` (`SmartObjectTransferNotActiveError`); the milestone is scheduled with SHIP-14.
+Actions 3–5 are rejected before `sobjV2` (`SmartObjectTransferNotActiveError`); the milestone is scheduled with [SHIP-14.md](SHIP-14.md).
 
 ## Reference Implementation
 
