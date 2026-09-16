@@ -6,7 +6,7 @@
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
   Category: Networking
-  Created: 2025-10-06
+  Created: 2023-10-06
   Last Update: 2026-06-19
 ```
 
