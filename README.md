@@ -59,7 +59,7 @@ Process and template: [SHIP-1](SHIPS/SHIP-1.md).
 | [37](SHIPS/SHIP-37.md) | Netfory Web4 Integration - `ntfryData` and `sth://` Content Links | Standards Track | Interface | Draft |
 | [38](SHIPS/SHIP-38.md) | Light Clients - Verifiable State Commitments | Standards Track | Core | Draft |
 | [39](SHIPS/SHIP-39.md) | Sub-Second Slots and Pipelined Forging | Standards Track | Core | Draft |
-| [40](SHIPS/SHIP-40.md) | Encrypted Memos - Post-Quantum Private Messaging (ML-KEM) | Standards Track | Core | Draft |
+| [40](SHIPS/SHIP-40.md) | Post-Quantum E2EE Key Registry and Encrypted On-Chain Memos (ML-KEM) | Standards Track | Core | Draft |
 
 ## Categories
 
