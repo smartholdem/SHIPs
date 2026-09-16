@@ -7,7 +7,7 @@
   Type: Standards Track
   Category: Core
   Created: 2026-03-16
-  Last Update: 2026-06-19
+  Last Update: 2026-07-11
 ```
 
 ## Abstract

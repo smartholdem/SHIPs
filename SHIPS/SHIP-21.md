@@ -7,7 +7,7 @@
   Type: Standards Track
   Category: Interface
   Created: 2026-04-27
-  Last Update: 2026-06-19
+  Last Update: 2026-08-01
 ```
 
 ## Abstract
