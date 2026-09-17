@@ -73,7 +73,7 @@ window. Requires a formal review before Accepted.
 
 ## Backwards Compatibility
 
-New typeGroup; [Rust-only network](https://github.com/smartholdem/sth-core-rust).
+New typeGroup; [Rust-only network](https://github.com/smartholdem/sth-core-pq).
 
 ## Reference Implementation
 

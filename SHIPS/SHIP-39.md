@@ -21,7 +21,7 @@ required to meet latency and clock criteria enforced by the protocol.
 
 8-second slots date from a network of Node.js peers on WebSockets. User-perceived speed (payments confirmed in ~1s,
 market orders settled instantly) and throughput per second both scale with slot count; the measured budget shows a 1-second
-slot is feasible when the network is [sth-coreRust-only](https://github.com/smartholdem/sth-core-rust) (`docs/THROUGHPUT-LIMITS.md`, `docs/MULTIPAY-1024.md`).
+slot is feasible when the network is [sth-coreRust-only](https://github.com/smartholdem/sth-core-pq) (`docs/THROUGHPUT-LIMITS.md`, `docs/MULTIPAY-1024.md`).
 
 ## Specification
 
@@ -59,7 +59,7 @@ individually reversible by milestone ([SHIP-23.md](SHIP-23.md) governance may vo
 
 ## Backwards Compatibility
 
-[sth-core-rust-only](https://github.com/smartholdem/sth-core-rust)  network; each stage is a milestone with `minCoreVersion`.
+[sth-core-pq-only](https://github.com/smartholdem/sth-core-pq)  network; each stage is a milestone with `minCoreVersion`.
 
 ## Reference Implementation
 

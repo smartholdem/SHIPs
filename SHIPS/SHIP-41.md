@@ -25,7 +25,7 @@ Static fees on mainnet are 1 STH per transfer; the legacy nodes have run with `d
 plain transfer actually costs ≈ 0.0077 STH (`minFeePool = 3000` smartoshi/byte). Two problems appeared with the Rust
 rollout:
 
-1. `sth-core` < 0.20 reported `dynamicFees.enabled = false`, so wallets connected to a Rust node charged users the static
+1. `sth-core` < 0.20 reported `dynamicFees.enabled = false`, so wallets connected to a PQ Nodes charged users the static
    1 STH - 130x more than through a legacy node - while its pool accepted *any* fee (even 1 smartoshi), which opened the door
    to spam.
 2. The difference between "enter the pool" and "be broadcast" was folklore.

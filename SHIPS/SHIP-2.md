@@ -12,7 +12,7 @@
 
 ## Abstract
 
-This SHIP specifies `sth-core`, a full reimplementation of the SmartHoldem [node in Rust](https://github.com/smartholdem/sth-core-rust) that is byte-for-byte compatible with
+This SHIP specifies `sth-core`, a full reimplementation of the SmartHoldem [PQ Node](https://github.com/smartholdem/sth-core-pq) that is byte-for-byte compatible with
 the historical chain (block and transaction hashing, signatures, state transitions) and with the legacy REST API, while
 replacing the storage engine, the networking stack and the execution pipeline. It is the platform on which every later SHIP
 is built.
@@ -73,9 +73,9 @@ in which consensus rules are explicit functions with unit-tested vectors.
 
 ## Backwards Compatibility
 
-Full: legacy and Rust nodes co-exist in one network. Features that legacy nodes cannot validate are gated behind milestones
+Full: legacy and PQ Node co-exist in one network. Features that legacy nodes cannot validate are gated behind milestones
 that are scheduled only when all active delegates run `sth-core` (see SHIP-1 workflow).
 
 ## Reference Implementation
 
-`sth-core-rust/` - the whole crate; `tests/` (25 suites) including `crypto_vectors`, `genesis`, `sync`, `storage`, `api`.
+`sth-core-pq/` - the whole crate; `tests/` (25 suites) including `crypto_vectors`, `genesis`, `sync`, `storage`, `api`.

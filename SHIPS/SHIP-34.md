@@ -123,7 +123,7 @@ Clock is block height (not wall time): a chain halt delays triggers, never fires
 
 ## Backwards Compatibility
 
-New typeGroup / template; [Rust only network](https://github.com/smartholdem/sth-core-rust).
+New typeGroup / template; [Rust only network](https://github.com/smartholdem/sth-core-pq).
 
 ## Reference Implementation
 

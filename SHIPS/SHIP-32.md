@@ -67,7 +67,7 @@ receipt delay is the only user-visible change and mirrors how banks post credits
 
 ## Backwards Compatibility
 
-Block v1, [Rust-only network](https://github.com/smartholdem/sth-core-rust). `S = 1` is exactly today's behaviour.
+Block v1, [Rust-only network](https://github.com/smartholdem/sth-core-pq). `S = 1` is exactly today's behaviour.
 
 ## Reference Implementation
 
