@@ -64,32 +64,32 @@ transactions ([SHIP-14.md](SHIP-14.md), `tokenFees`), v3 post-quantum transactio
 
 ### Mainnet constants (identical to the legacy `transactionPool.dynamicFees`)
 
-| type | name | addonBytes |
-|---:|---|---:|
-| 0 | transfer | 100 |
-| 1 | secondSignature | 250 |
-| 2 | delegateRegistration | 400 000 |
-| 3 | vote | 100 |
-| 4 | multiSignature | 500 |
-| 5 | ipfs | 250 |
-| 6 | multiPayment | 500 |
-| 7 | delegateResignation | 100 |
-| 8 | htlcLock | 100 |
-| 9 | htlcClaim | 0 |
-| 10 | htlcRefund | 0 |
+| type | name                 | addonBytes |
+|-----:|----------------------|-----------:|
+|    0 | transfer             |        100 |
+|    1 | secondSignature      |        250 |
+|    2 | delegateRegistration |    400 000 |
+|    3 | vote                 |        100 |
+|    4 | multiSignature       |        500 |
+|    5 | ntfry                |        250 |
+|    6 | multiPayment         |        500 |
+|    7 | delegateResignation  |        100 |
+|    8 | htlcLock             |        100 |
+|    9 | htlcClaim            |          0 |
+|   10 | htlcRefund           |          0 |
 
 `minFeePool = 3000`, `minFeeBroadcast = 3000` smartoshi/byte. Unknown types have `addonBytes = 0`.
 
 ### Wire sizes wallets may assume (v2, Schnorr 64-byte signature, no vendorField)
 
-| type | bytes | formula | minimum at 3000/byte |
-|---|---:|---|---:|
-| transfer | 156 | 59 header + 8 amount + 4 expiration + 21 recipient + 64 signature | (100 + 156) × 3000 = **768 000** (0.00768 STH) |
-| vote (1 vote) | 158 | 59 + 1 count + 34 vote + 64 signature | (100 + 158) × 3000 = 774 000 |
-| delegateRegistration | 124 + len(username) | 59 + 1 length + username + 64 signature | ≈ (400 000 + 130) × 3000 ≈ 12.0 STH (static fee 10 000 STH is also accepted - any fee ≥ minimum is) |
-| delegateResignation | 123 | 59 + 64 signature (no payload) | (100 + 123) × 3000 = 669 000 |
-| multiPayment (N recipients) | 125 + 29·N | 59 + 2 count + 29 per recipient + 64 signature | (500 + 125 + 29·N) × 3000 |
-| vendorField adds `len(vendorField)` bytes | | | + 3000 per byte |
+| type                                      |               bytes | formula                                                           |                                                                                minimum at 3000/byte |
+|-------------------------------------------|--------------------:|-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------:|
+| transfer                                  |                 156 | 59 header + 8 amount + 4 expiration + 21 recipient + 64 signature |                                                      (100 + 156) × 3000 = **768 000** (0.00768 STH) |
+| vote (1 vote)                             |                 158 | 59 + 1 count + 34 vote + 64 signature                             |                                                                        (100 + 158) × 3000 = 774 000 |
+| delegateRegistration                      | 124 + len(username) | 59 + 1 length + username + 64 signature                           | ≈ (400 000 + 130) × 3000 ≈ 12.0 STH (static fee 10 000 STH is also accepted - any fee ≥ minimum is) |
+| delegateResignation                       |                 123 | 59 + 64 signature (no payload)                                    |                                                                        (100 + 123) × 3000 = 669 000 |
+| multiPayment (N recipients)               |          125 + 29·N | 59 + 2 count + 29 per recipient + 64 signature                    |                                                                           (500 + 125 + 29·N) × 3000 |
+| vendorField adds `len(vendorField)` bytes |                     |                                                                   |                                                                                     + 3000 per byte |
 
 A wallet **should** query the node rather than hard-code the table: `GET /api/node/configuration` →
 `data.transactionPool.dynamicFees { enabled, minFeePool, minFeeBroadcast, addonBytes }`. If `enabled` is `false` it must use
