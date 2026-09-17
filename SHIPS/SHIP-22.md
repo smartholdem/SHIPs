@@ -2,7 +2,7 @@
   SHIP: 22
   Title: Quantum Shield Stage C - Hybrid Block Signatures
   Authors: TechnoLog <technolog@smartholdem.io> / <SeZLuyhhYf2qxs4ArPJ71oEu3x8EsVw51C@sth>
-  Status: Draft
+  Status: Accepted
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
   Category: Core

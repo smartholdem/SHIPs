@@ -2,7 +2,7 @@
   SHIP: 35
   Title: BFT Finality Gadget over Iroh Gossip
   Authors: TechnoLog <technolog@smartholdem.io> / <SeZLuyhhYf2qxs4ArPJ71oEu3x8EsVw51C@sth>
-  Status: Draft
+  Status: Accepted
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
   Category: Core
