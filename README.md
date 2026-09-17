@@ -4,9 +4,9 @@ SHIPs describe standards for the SmartHoldem network: consensus rules, transacti
 peer-to-peer transport, tooling and processes. A SHIP is a design document providing information to the community and
 describing a new feature, its rationale and a reference implementation in `sth-core` (Rust).
 
-Repository: <https://github.com/smartholdem/SHIPs> · Discussions: <https://github.com/smartholdem/SHIPs/issues>
-Process and template: [SHIP-1](SHIPS/SHIP-1.md).
-PQ Node: SmartHoldem Rust Core Node (`sth-core`) with Post-Quantum Key Commitments and Hybrid Block Signatures: [SHIP-18](SHIPS/SHIP-18.md), [SHIP-20](SHIPS/SHIP-20.md), [SHIP-22](SHIPS/SHIP-22.md).
+- Repository: <https://github.com/smartholdem/SHIPs> · Discussions: <https://github.com/smartholdem/SHIPs/issues>
+- Process and template: [SHIP-1](SHIPS/SHIP-1.md).
+- PQ Node: SmartHoldem Rust Core Node (`sth-core`) with Post-Quantum Key Commitments and Hybrid Block Signatures: [SHIP-18](SHIPS/SHIP-18.md), [SHIP-20](SHIPS/SHIP-20.md), [SHIP-22](SHIPS/SHIP-22.md).
 
 ## Statuses
 
