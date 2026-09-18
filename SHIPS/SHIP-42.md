@@ -15,17 +15,17 @@
 
 This proposal defines a **Service Node** (masternode) layer for SmartHoldem: a class of non-forging nodes that lock a
 collateral of STH, run 24/7 and provide verifiable network services - Iroh relays, Netfory content seeding, messenger
-relaying, `u://` microblog relaying and `api://` Web2→Web4 provider gateways - in exchange for protocol-level rewards and
+relaying, `u://` microblog relaying and `api://` Web2->Web4 provider gateways - in exchange for protocol-level rewards and
 peer-to-peer micro-payments.
 
 Service Nodes **do not forge blocks**. Block production remains the exclusive right of the Top-21 DPoS delegates
-(SHIP-1, SHIP-11, SHIP-35). Service Nodes are registered on-chain as SmartObjects (SHIP-13) of a dedicated type, their
+(SHIP-1, SHIP-11, SHIP-35). Service Nodes are registered on-chain as SmartObjects ([SHIP-13.md](SHIP-13.md)) of a dedicated type, their
 health is attested by the active delegates over Iroh gossip (*Proof of Service*), and a configurable share of the dynamic
-transaction fees (SHIP-41) and/or a dedicated block reward is paid out to nodes that met the uptime threshold of the
+transaction fees ([SHIP-41.md](SHIP-41.md)) and/or a dedicated block reward is paid out to nodes that met the uptime threshold of the
 previous payout epoch.
 
 The proposal is adaptation needed to the PQ node (`sth-core`), the Iroh transport
-(SHIP-4), the sObject state machine (SHIP-13, SHIP-16) and native tokens (SHIP-14).
+([SHIP-4.md](SHIP-4.md)), the sObject state machine ([SHIP-13.md](SHIP-13.md), [SHIP-16.md](SHIP-16.md)) and native tokens ([SHIP-14.md](SHIP-14.md)).
 
 ## Motivation
 
@@ -34,7 +34,7 @@ The proposal is adaptation needed to the PQ node (`sth-core`), the Iroh transpor
    on a volunteer gateways (`legacy_listen`, `api.cors_origins`, `netfory-provider`). As Web4 traffic grows -
    static sites, messenger buffering, microblog feeds, API tunnels - the cost is borne by a shrinking set of operators.
 2. **Connectivity for the Netfory / Web4 ecosystem.** Iroh hole-punching works only as well as the relay coverage
-   (`p2p.iroh.relays`, SHIP-4 §8). Home delegates behind NAT, mobile wallets and browsers need geographically distributed,
+   (`p2p.iroh.relays`, [SHIP-4.md](SHIP-4.md)). Home delegates behind NAT, mobile wallets and browsers need geographically distributed,
    high-bandwidth relays that no delegate is obliged to run.
 3. **Tokenomics.** Locking 10 000 STH per Service Node removes liquidity from the market in exchange for a predictable
    yield tied to *useful work*, complementing the vote-weight lock-up of DPoS.
@@ -122,7 +122,7 @@ milestone-scoped and therefore changeable by a coordinated milestone update (see
 Roles are advertised in `ntfryData.roles` and verified by attestors role-by-role. A node MAY provide several roles; a
 role that fails verification lowers only that role's score.
 
-| role | service | verification probe (attestor → SN) | notes |
+| role | service | verification probe (attestor -> SN) | notes |
 |---|---|---|---|
 | `relay` | **N1 Network Relay** - Iroh relay + hole-punching server (`relay: true` in `p2p.iroh`), high bandwidth, public IP or `relays: [https://…]` endpoint | Iroh RPC `SnProbe { role: relay }` + a 64 KiB echo over a *relayed* path through the SN's relay URL; latency and throughput recorded | Home delegates (SHIP-4 §1) select these relays first. |
 | `seeder` | **Content Seeder** - dedicated local storage (`allocated_storage_gb`) seeding Web4 static sites, files and Netfory network state addressed by `sth://` pointers (SHIP-37) | `SnProbe { role: seeder, want: <random chunk id from the seeding manifest published by the SN> }` - the SN must return the chunk and its BLAKE3 hash within 2 s | Optional per node; capacity advertised in `storage=` GiB. |
@@ -206,7 +206,7 @@ settled directly between client and SN:
 * The client pays with an ordinary transfer or token transfer (SHIP-14 `TokenTransfer`) carrying `vendorField =
   "sn:<endpointId>:<sessionId>"`; the SN unlocks the session once the transaction is in the pool (`recentlySeen`) or in a
   block, according to its own risk policy. Dynamic fees (SHIP-41) make sub-cent payments practical (≈ 0.008 STH).
-* Streaming sessions MAY use SHIP-9 HTLC locks (`htlcLock` → periodic `htlcClaim` by the SN) for pay-as-you-go without
+* Streaming sessions MAY use SHIP-9 HTLC locks (`htlcLock` -> periodic `htlcClaim` by the SN) for pay-as-you-go without
   per-request transactions.
 
 Micro-payments are outside consensus; this section fixes only the `vendorField` convention so that explorers and
@@ -238,19 +238,19 @@ p2p:
 
 ### API
 
-| method | path | description |
-|---|---|---|
-| GET | `/api/masternodes` | active and inactive Service Nodes: `name`, `address`, `rewardAddress`, `publicKey`, `endpointId`, `roles`, `active`, `collateral`, `uptime` (current epoch, %), `lastSeen`, `latencyMs`, `api`, `storageGb`; filters `role=`, `active=`, pagination as `/api/delegates` |
-| GET | `/api/masternodes/:id` | by name, address or EndpointId; includes `history` (last 10 epochs: score, paid) |
-| GET | `/api/masternodes/:id/attestations?round=` | attestations of one round (who saw it, roles bitmask, latency) |
-| GET | `/api/masternodes/pool` | pool balance, current epoch progress, projected per-node payout |
-| GET | `/api/ntfry/metrics` | extended with `serviceNodes: { total, active, qualified, poolBalance, epochRound, myScore }` |
-| GET | `/api/node/configuration` | `constants.masternodes` mirrors the milestone block |
+| method | path                                       | description                                                                                                                                                                                                                                                             |
+|--------|--------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GET    | `/api/masternodes`                         | active and inactive Service Nodes: `name`, `address`, `rewardAddress`, `publicKey`, `endpointId`, `roles`, `active`, `collateral`, `uptime` (current epoch, %), `lastSeen`, `latencyMs`, `api`, `storageGb`; filters `role=`, `active=`, pagination as `/api/delegates` |
+| GET    | `/api/masternodes/:id`                     | by name, address or EndpointId; includes `history` (last 10 epochs: score, paid)                                                                                                                                                                                        |
+| GET    | `/api/masternodes/:id/attestations?round=` | attestations of one round (who saw it, roles bitmask, latency)                                                                                                                                                                                                          |
+| GET    | `/api/masternodes/pool`                    | pool balance, current epoch progress, projected per-node payout                                                                                                                                                                                                         |
+| GET    | `/api/ntfry/metrics`                       | extended with `serviceNodes: { total, active, qualified, poolBalance, epochRound, myScore }`                                                                                                                                                                            |
+| GET    | `/api/node/configuration`                  | `constants.masternodes` mirrors the milestone block                                                                                                                                                                                                                     |
 
 Iroh RPC (SHIP-4 ALPN): `SnProbe`, `SnProbeReply`, `GetSnAttestations`, `GetSnRoot { epoch }`. Gossip topic
 `sha256("sth/<nethash>/service")`.
 
-Storage (SHIP-3 prefixes): `sn:` (endpointId → object id, roles, since), `sa:<round>:<endpointId>` (attestations, pruned
+Storage ([SHIP-3.md](SHIP-3.md) prefixes): `sn:` (endpointId -> object id, roles, since), `sa:<round>:<endpointId>` (attestations, pruned
 after 2 epochs), `sr:<epoch>` (committed `snRoot` + payout list).
 
 ## Rationale
@@ -302,7 +302,7 @@ aggregation, snRoot determinism, payout split), `tests/newnet.rs` (milestone act
   epoch payout is bounded by the pool, so the marginal Sybil node dilutes the attacker's own nodes as much as everyone
   else's. `max_same_subnet` (default 4 SNs per /24, checked by attestors on the probed address) limits data-centre farming.
 * **Fake uptime.** Attestations are signed by delegate forging keys; a non-delegate cannot forge them and a delegate that
-  attests inconsistently (equivocation) is banned from forging for 30 rounds (SHIP-35). `min_attestors = 11` requires a
+  attests inconsistently (equivocation) is banned from forging for 30 rounds ([SHIP-35.md](SHIP-35.md)). `min_attestors = 11` requires a
   majority of the active set to be compromised to grant undeserved rewards. Probe nonces (32 random bytes, signed by the
   SN's Iroh key) prevent replay; seeder/microblog probes fetch *random* content so a node cannot pre-compute answers.
 * **Attestor laziness / collusion.** A delegate that never attests contributes nothing to any SN's score and is visible in
@@ -310,11 +310,11 @@ aggregation, snRoot determinism, payout split), `tests/newnet.rs` (milestone act
   future SHIP MAY make attestation participation a forging requirement.
 * **Chain-split safety.** `snRoot` is verified by every node from its own attestation table; a block with a wrong root is
   rejected like a bad `payloadHash`. Nodes missing attestations fetch them from ≥ 3 peers before judging; if they still
-  cannot rebuild the root they accept the block under SHIP-35 finality certificates (≥ 15 delegates signed it) and log
-  `SnRootUnverified`, exactly as light clients trust certificates (SHIP-38).
+  cannot rebuild the root they accept the block under [SHIP-35.md](SHIP-35.md) finality certificates (≥ 15 delegates signed it) and log
+  `SnRootUnverified`, exactly as light clients trust certificates ([SHIP-38.md](SHIP-38.md)).
 * **Micro-payment fraud.** Off-chain by design; SNs should require pool inclusion for small sessions and block inclusion
   for large ones, and clients should prefer HTLC streaming for long sessions. Neither side can affect consensus.
-* **Privacy.** Provider and messenger relays see traffic metadata; content is E2EE (SHIP-40) and clients rotate relays
+* **Privacy.** Provider and messenger relays see traffic metadata; content is E2EE ([SHIP-40.md](SHIP-40.md)) and clients rotate relays
   per session. SNs MUST NOT log payload bodies; the manifest field `logging: none|metadata` is advertised and probed.
 
 ## Copyright
