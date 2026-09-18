@@ -1,7 +1,7 @@
 ```
   SHIP: 41
   Title: Dynamic Fees - Per-Node Pool Policy and the Wallet Fee Formula
-  Authors: TechnoLog <technolog@smartholdem.io>
+  Authors: TechnoLog <technolog@smartholdem.io> / <SeZLuyhhYf2qxs4ArPJ71oEu3x8EsVw51C@sth>
   Status: Active
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
