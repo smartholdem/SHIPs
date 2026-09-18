@@ -19,7 +19,7 @@ relaying, `u://` microblog relaying and `api://` Web2->Web4 provider gateways - 
 peer-to-peer micro-payments.
 
 Service Nodes **do not forge blocks**. Block production remains the exclusive right of the Top-21 DPoS delegates
-(SHIP-1, SHIP-11, SHIP-35). Service Nodes are registered on-chain as SmartObjects ([SHIP-13.md](SHIP-13.md)) of a dedicated type, their
+([SHIP-1.md](SHIP-1.md), [SHIP-11.md](SHIP-11.md), [SHIP-35.md](SHIP-35.md)). Service Nodes are registered on-chain as SmartObjects ([SHIP-13.md](SHIP-13.md)) of a dedicated type, their
 health is attested by the active delegates over Iroh gossip (*Proof of Service*), and a configurable share of the dynamic
 transaction fees ([SHIP-41.md](SHIP-41.md)) and/or a dedicated block reward is paid out to nodes that met the uptime threshold of the
 previous payout epoch.
