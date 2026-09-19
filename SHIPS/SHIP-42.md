@@ -6,8 +6,8 @@
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
   Category: Core / Interface / Protocol
-  Created: 2026-09-19
-  Last Update: 2026-09-19
+  Created: 2026-09-17
+  Last Update: 2026-09-17
   Requires: 13, 14, 41
 ```
 

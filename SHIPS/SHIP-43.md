@@ -1,13 +1,13 @@
 ```
   SHIP: 43
   Title: Token Market - Partial Sell Orders for Native Token Balances (On-Chain DEX)
-  Authors: TechnoLog <technolog@smartholdem.io>
+  Authors: TechnoLog <technolog@smartholdem.io> / <SeZLuyhhYf2qxs4ArPJ71oEu3x8EsVw51C@sth>
   Status: Draft
   Discussions-To: https://github.com/smartholdem/SHIPs/issues
   Type: Standards Track
   Category: Core / Interface
-  Created: 2026-09-19
-  Last Update: 2026-09-19
+  Created: 2026-09-17
+  Last Update: 2026-09-17
   Requires: 13, 14, 16, 41
 ```
 
