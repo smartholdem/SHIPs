@@ -65,6 +65,8 @@ describing a new feature, its rationale and a reference implementation in `sth-c
 | [42](SHIPS/SHIP-42.md) | Service Nodes (Masternodes) Protocol & Netfory Infrastructure Incentives                                                        | Standards Track | Core / Interface / Protocol | Draft    |
 | [43](SHIPS/SHIP-43.md) | Token Market - Partial Sell Orders for Native Token Balances (On-Chain DEX)                                                     | Standards Track | Core / Interface            | Draft    |
 | [44](SHIPS/SHIP-44.md) | Wallet Stream API - REST over iroh (`netfory/api/1`), push subscriptions (`sth/events/1`), MessagePack frames, WebSocket bridge | Standards Track | Networking / Interface      | Active   |
+| [45](SHIPS/SHIP-45.md) | Network Autonomy Double-Forge Guard, Relay Guard, sthpq Address Book and Mainline DHT Discovery                                 | Standards Track | Networking / Protocol       | Active   |
+
 ## Categories
 
 - **Core** - consensus, transaction types, state, validation rules.
