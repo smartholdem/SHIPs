@@ -66,6 +66,9 @@ describing a new feature, its rationale and a reference implementation in `sth-c
 | [43](SHIPS/SHIP-43.md) | Token Market - Partial Sell Orders for Native Token Balances (On-Chain DEX)                                                     | Standards Track | Core / Interface            | Draft    |
 | [44](SHIPS/SHIP-44.md) | Wallet Stream API - REST over iroh (`netfory/api/1`), push subscriptions (`sth/events/1`), MessagePack frames, WebSocket bridge | Standards Track | Networking / Interface      | Active   |
 | [45](SHIPS/SHIP-45.md) | Network Autonomy Double-Forge Guard, Relay Guard, sthpq Address Book and Mainline DHT Discovery                                 | Standards Track | Networking / Protocol       | Active   |
+| [46](SHIPS/SHIP-46.md) | Pruned Child DEX Database and Token-to-Token Market Abstraction                                                                 | Standards Track | Core / Market               | Draft    |
+
+
 
 ## Categories
 
